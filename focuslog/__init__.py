@@ -1,0 +1,1 @@
+"""FocusLog desktop application package."""
