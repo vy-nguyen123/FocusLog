@@ -40,7 +40,11 @@ The SQLite database is created outside the repository at:
 
 ## Obsidian setup
 
-Open **Settings**, choose **Select Vault**, and select the root folder of an Obsidian vault. The selected folder must contain `.obsidian`.
+1. In Obsidian, choose **Create new vault**, select its location, and open it once.
+2. In FocusLog, open **Settings** and choose **Select Vault**.
+3. Select the vault's root folder, not a folder inside the vault.
+
+The selected folder must contain an `.obsidian` folder. Obsidian creates this folder when it initializes a vault, and FocusLog rejects folders that do not contain it.
 
 FocusLog appends events to:
 
@@ -49,6 +53,33 @@ Selected Vault\Productivity Logs\YYYY-MM-DD.md
 ```
 
 If the vault is unavailable, events remain in the local SQLite pending queue. Reconnect the vault and use **Retry Pending Logs**.
+
+## Basic usage
+
+### Tasks
+
+- Enter a task title and create the task.
+- Select a task to rename, complete, reopen, or delete it.
+- Deleting a task requires confirmation.
+- A task linked to a running or paused focus session cannot be changed or deleted until that session ends.
+
+### Focus Timer
+
+- Select an active task or enter a short activity description.
+- Choose **Start Focus**, then pause, resume, or stop the session as needed.
+- A session that reaches zero is completed automatically. Stopping early records it as cancelled.
+- Break timers are started manually and are not added to History or Obsidian logs.
+
+### History
+
+- Open **History** to review completed and cancelled focus sessions.
+- History is read-only and shows the planned and actual focused duration, newest first.
+
+### Settings
+
+- Open **Settings** to change the focus and break durations.
+- Select or replace the Obsidian vault from this screen.
+- Check the pending-log count and latest logging error, then choose **Retry Pending Logs** after restoring access to an unavailable vault.
 
 ## Test
 
